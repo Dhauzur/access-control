@@ -1,8 +1,5 @@
 import axios from '../config/axios';
 import helpers from '../utils/helpers';
-import cacheService from './cache';
-import proxyService from './proxy';
-import emailService from './email';
 import moment from 'moment';
 import CatcherServices from './catcher';
 

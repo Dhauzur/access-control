@@ -1,4 +1,4 @@
-import './config/config.js';
+import './config/envs.js';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 import express from 'express';
@@ -11,9 +11,7 @@ import swagger from './swagger/config';
 import fileUpload from 'express-fileupload';
 import { logger } from './config/pino';
 import responseTime from 'response-time';
-import cacheService from './services/cache';
 import catcherService from './services/catcher';
-import ssoService from './services/sso';
 
 const app = express();
 const MONGO_OPTIONS = {
@@ -58,18 +56,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: false }));
 app.use(bodyParser.json({ limit: '50mb' }));
 
-app.set('view engine', 'hbs');
 app.get('/', (req, res) => res.render('home', { date: new Date() }));
-app.get('/cache-refresh', async (req, res) => {
-	const response = await cacheService.refresCache();
-	res.json(response);
-});
-
 app.get('/errors', async (req, res) => {
 	const errors = await catcherService.getAll();
 	res.render('home', { errors });
 });
-
 app.get('/errors/delete', async (req, res) => {
 	const errors = await catcherService.deleteAll();
 	res.render('home', { errors });
@@ -80,6 +71,5 @@ swagger(app);
 connectToDB().then(() => {
 	deleteErrors();
 });
-ssoService.setToken();
 
 module.exports = app;
