@@ -1,0 +1,146 @@
+paths:
+    /registro/sso/reenviar/{rut}/{userid}:
+        get:
+            tags:
+                - User
+            summary: Enviar email
+            produces:
+                - application/json
+            parameters:
+                - in: path
+                  name: rut
+                  schema:
+                      type: string
+                  description: rut del usuario
+                  required: true
+                - in: path
+                  name: userid
+                  schema:
+                      type: string
+                  description: ID del usuario
+                  required: true
+            responses:
+                201:
+                    description: standard post 2xx response
+                400:
+                    description: when request doesn't pass object validation
+                500:
+                    description: server error
+    /registro/sso/{rut}/{email}:
+        post:
+            tags:
+                - User
+            summary: Crear user SSO
+            produces:
+                - application/json
+            parameters:
+                - in: path
+                  name: rut
+                  schema:
+                      type: string
+                  description: RUT del usuario
+                  required: true
+                - in: path
+                  name: email
+                  schema:
+                      type: string
+                  description: Email del usuario
+                  required: true
+                - in: body
+                  name: nombre y apellido por separado
+                  schema:
+                      type: string
+                  description: nombre
+                  required: true
+                  example:
+                      firstName: Sebastian Andres
+                      lastName: Muñoz Ruz
+            responses:
+                201:
+                    description: standard post 2xx response
+                400:
+                    description: when request doesn't pass object validation
+                500:
+                    description: server error
+        get:
+            tags:
+                - User
+            summary: Obtener estado afiliado / pensionado
+            produces:
+                - application/json
+            parameters:
+                - in: path
+                  name: rut
+                  schema:
+                      type: string
+                  description: RUT del usuario
+                  required: true
+                - in: path
+                  name: email
+                  schema:
+                      type: string
+                  description: Email del usuario
+                  required: true
+            responses:
+                201:
+                    description: standard post 2xx response
+                400:
+                    description: when request doesn't pass object validation
+                500:
+                    description: server error
+    /generaldata/crm:
+        get:
+            tags:
+                - User
+            summary: Obtener informacion general
+            produces:
+                - application/json
+            responses:
+                201:
+                    description: standard post 2xx response
+                400:
+                    description: when request doesn't pass object validation
+                500:
+                    description: server error
+    /registro/cliente/{rut}:
+        get:
+            tags:
+                - User
+            summary: Obtener estado afiliado / pensionado
+            produces:
+                - application/json
+            parameters:
+                - in: path
+                  name: rut
+                  schema:
+                      type: string
+                  description: rut del usuario
+                  required: true
+            responses:
+                201:
+                    description: standard post 2xx response
+                400:
+                    description: when request doesn't pass object validation
+                500:
+                    description: server error
+    /cliente/{rut}:
+        get:
+            tags:
+                - User
+            summary: Obtener datos personales
+            produces:
+                - application/json
+            parameters:
+                - in: path
+                  name: rut
+                  schema:
+                      type: string
+                  description: rut del usuario
+                  required: true
+            responses:
+                201:
+                    description: standard post 2xx response
+                400:
+                    description: when request doesn't pass object validation
+                500:
+                    description: server error

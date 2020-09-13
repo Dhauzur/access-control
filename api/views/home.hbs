@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <h1>gateway online: {{ date }}</h1>
+  <h2>{{ title }}</h2>
+  <dir>
+    {{img }}
+    <table>
+      <thead>
+        <tr>
+          <th>STATUS</th>
+          <th>DATE</th>
+          <th>DESCRIPTION</th>
+          <th>URL</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each errors}}
+        <tr>
+          <td>{{this.status}}</td>
+          <td>{{this.updatedAt}}</td>
+          <td>{{this.description}}</td>
+          <td>{{this.url}}</td>
+        </tr>
+        {{/each}}
+
+      </tbody>
+    </table>
+
+   <br>  <b>500 Internal Server Error</b>
+<br>Es un código comúnmente emitido por aplicaciones empotradas en servidores web, mismas que generan contenido dinámicamente, por ejemplo aplicaciones montadas en IIS o Tomcat, cuando se encuentran con situaciones de error ajenas a la naturaleza del servidor web.
+<br><b>501 Not Implemented</b>
+<br>El servidor no soporta alguna funcionalidad necesaria para responder a la solicitud del navegador (como por ejemplo el método utilizado para la petición).
+<br><b>502 Bad Gateway</b>
+<br>El servidor está actuando de proxy o gateway y ha recibido una respuesta inválida del otro servidor, por lo que no puede responder adecuadamente a la petición del navegador.
+<br><b>503 Service Unavailable</b>
+<br>El servidor no puede responder a la petición del navegador porque está congestionado o está realizando tareas de mantenimiento.
+<br><b>504 Gateway Timeout</b>
+<br>El servidor está actuando de proxy o gateway y no ha recibido a tiempo una respuesta del otro servidor, por lo que no puede responder adecuadamente a la petición del navegador.
+<br><b>505 HTTP Version Not Supported</b>
+<br>El servidor no soporta o no quiere soportar la versión del protocolo HTTP utilizada en la petición del navegador.
+  </dir>
+</body>
+
+</html>
