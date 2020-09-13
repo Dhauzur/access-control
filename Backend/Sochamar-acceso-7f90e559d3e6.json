@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "sochamar-acceso",
+  "private_key_id": "7f90e559d3e6e07b9975407ad1776707aec84258",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDDKmoD9wrrDzQf\naeb6xQY4ii1TtvBD9AnMr/5YtcbzgMeTta7GKS1tYYHOIZx9NaZAn3CZXf/Ivt66\ngi3Sz4UskLJHR80oPs4p6AouLoNrfgRffOSHQ0kWsEc6gK0daM7feG4S/uhFrL0A\nirsCdpajibb3x38gPhDb2G4PZGL9rUTeGusXjmCzN5svO6Z9RbxEJrv7lhlZbEka\naUpYyuK9tzy/YjyuhpaEdK/qJ/Sz+uXsn0HyPngInvyFsIi8l1iGAlY9NoiK21NG\nLAbu77j1zOESF/UyRI6ez0Mi2dV+taiO5tAKEoGcFCYToDUiSTusOq2JuuWlm/ez\noHN+UTkrAgMBAAECggEAWVCHw9jCvl/u0pF8izavaiCSLcWCnxaHhYzlMWO+8KD2\ntLpoiXc+utfst5DaNNLgiqJsvUMvU4dGFsSMg/VEVOjDLavGT6yuXK88OXY/3mmF\nRs25J827HQ7/Cd7pWpQkWFCcz0Sot3od5KmYe8AZoC3d9fbuTqsYvAOIGrMuOjjM\nThQQOBjSMGsSSbCtlB1UcLDEngf727/fX3h+Y8LrDXMIw2O347jN3RGiLW6vHUTL\n6IOL/l+roZVMiXbdWy/ZqiKLu3tP/8AOa56G4fDpkLtHR1Dn1MmSx9MMA5O7Vsi5\nWeJrBGSdv+jKyrUI2r3Wl/2SXFgMoCPmbGGIprEhAQKBgQDukn4F35BG67I/3zD6\nPVM7aXAOyJJ+yMrkZCm6RD4HDXHVtbnz47xvuFB05fC0/ORredSJb3NO+a/Ds/tA\nkhIp4CeHVZN2RvcPhvAjw083wcI3QTcHBWoE/d7Ki/UqGYIgg5HdTSKqHRylErZM\nltHmr48/Bss7N7/yAW2aF+ltEQKBgQDRbC5+RySYBwybHk4Thh6K10E/4qv6Z7Iq\nMockxLbLkfgNDTz7FrdtjwfmE/t198naRmlO25nXcnxiAWkEi+sXEpi6Bsh2NUc5\nnAZmIwZbFhduujTcGXLihg27hTWqJQwPxbelcx/CbPO5pnAOyUZtuYKTx1ZKJVYg\nvAgyThSyewKBgQC/bVglik+QOIscaRA5mn9wipfZpOK3TJJQVHaO+Tb0HbubiWed\n5LxMwI3+XoqYDtuRyX3akUzqr7pyw7X1B7//Tdcp5maeXy7ajKGfcJXd3WDjSTbI\nMXXyb2oXB9o+X51kTW37LmuEKDvV0H/qUJI4EeJU5jSoXYFsw+yX2lv4oQKBgQC4\nK/57WU+KT3C7nhwluWZ0zbb5WvvJnJYn3AXTxRfI0VcnC0RcwO6RcB8PLPWRGlgv\nGIsWKbQSsAFJI1pbAD3ALb+Yocx7gIFh3aAXBKhbRINZAnLoOY06P5AmIJFAT5Ja\n8JN/8k2066Iv23pi1omUh3eZRM3TKSCkaxh+PQKgrwKBgHC8s3xjG6CRRzL1oRtK\n3YYVA6chDD5nWOgK9L0qV4aEj8opJ8b0IHtvrnQMcPpEzq0+D8uhmL8DofJokblu\nb7P+gt4gonoaPW1/XzwFuT3Shp1fPioe3siEqiXdz1S4gNeEqcDFDe/r1AahHl1j\nZA5Y488jCHin2f1wEhjFzKTN\n-----END PRIVATE KEY-----\n",
+  "client_email": "cuenta-google-sochamar-acceso@sochamar-acceso.iam.gserviceaccount.com",
+  "client_id": "112440424922062552446",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cuenta-google-sochamar-acceso%40sochamar-acceso.iam.gserviceaccount.com"
+}
