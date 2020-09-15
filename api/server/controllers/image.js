@@ -1,9 +1,13 @@
 import imageService from '../services/image';
+import helpers from '../utils/helpers';
 
 const imageController = {
 	put(req, res) {
 		const { data } = req.body;
-		res(imageService.put(data));
+		res.json(imageService.put(data));
+	},
+	process(req, res) {
+		res.json(helpers.process());
 	},
 };
 

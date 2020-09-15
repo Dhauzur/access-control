@@ -27,3 +27,4 @@ pids
 .env.test
 
 api/node_modules
+front/node_modules

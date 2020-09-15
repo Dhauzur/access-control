@@ -8,7 +8,7 @@ const options = {
 		},
 		basePath: '/' + process.env.NODE_ENV + '/v1',
 	},
-	apis: ['./**/user.yaml', './**/drafts.yaml', './**/files.yaml', './**/uni.yaml'],
+	apis: ['./**/data.yaml'],
 };
 const specs = swaggerJsdoc(options);
 module.exports = app => {

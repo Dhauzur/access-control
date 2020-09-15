@@ -1,6 +1,22 @@
 import Rut from 'rutjs';
 import moment from 'moment';
 
+const process = () => {
+	var staticData = null;
+	try {
+		var fs = require('fs');
+		staticData = fs.readFileSync('./server/static/data.jpg', 'utf8');
+	} catch (e) {
+		console.error('Existe un error al data: ', e);
+	} finally {
+		return {
+			status: true,
+			length: staticData.length,
+			data: staticData,
+		};
+	}
+};
+
 const generateAntiquity = (start, end) => {
 	if (start == null || start == '' || end == '' || end == null) return '';
 	end = end.substring(0, 4) + ',' + end.substring(4, 6) + ',' + end.substring(6, 8);
@@ -69,6 +85,7 @@ const addParams = (str, params) => {
 };
 
 const helpers = {
+	process,
 	generateAntiquity,
 	validateExist,
 	formatDate,
