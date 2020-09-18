@@ -7,7 +7,6 @@ import mongoose from 'mongoose';
 import routes from './routes/index';
 import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
-import swagger from './swagger/config';
 import fileUpload from 'express-fileupload';
 import { logger } from './config/pino';
 import responseTime from 'response-time';
@@ -67,7 +66,6 @@ app.get('/errors/delete', async (req, res) => {
 });
 
 routes(app);
-swagger(app);
 connectToDB().then(() => {
 	deleteErrors();
 });
