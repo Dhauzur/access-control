@@ -27,5 +27,7 @@ pids
 .env.test
 
 api/node_modules
+api/package-lock.json
 front/node_modules
 client/node_modules
+client/package-lock.json
