@@ -21,7 +21,7 @@ const imageController = {
 		myCamera
 			.snapDataUrl()
 			.then(result => {
-				res.render('home', { immg: { result } });
+				res.render('home', { immg: result });
 			})
 			.catch(error => {
 				// Handle your error
