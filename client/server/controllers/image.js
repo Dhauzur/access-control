@@ -11,14 +11,14 @@ const imageController = {
 		res.json(helpers.process());
 	},
 	picam(req, res) {
-//		const myCamera = new PiCamera({
-//			mode: 'photo',
-//			width: 340,
-//			height: 280,
-//			nopreview: true,
-//		});
+		//		const myCamera = new PiCamera({
+		//			mode: 'photo',
+		//			width: 340,
+		//			height: 280,
+		//			nopreview: true,
+		//		});
 
-/*		myCamera
+		/*		myCamera
 			.snapDataUrl()
 			.then(result => {
 				res.render('home', { immg: result });
@@ -26,17 +26,19 @@ const imageController = {
 			.catch(error => {
 				// Handle your error
 			});
-*/        fs.readFile(pic.jpg), function (error, data) {
-    if (error) {
-      throw error;
-    } else {
-      //console.log(data);
-      var dataBase64 = Buffer.from(data).toString('base64');
-      console.log(dataBase64);
-      res.render('home', { immg: dataBase64 });
-    }
-  });
+*/
 
+		var fs = require('fs');
+		fs.readFile('pic.jpg', (error, data) => {
+			if (error) {
+				throw error;
+			} else {
+				//console.log(data);
+				var dataBase64 = Buffer.from(data).toString('base64');
+				console.log(dataBase64);
+				res.render('home', { immg: dataBase64 });
+			}
+		});
 	},
 };
 
