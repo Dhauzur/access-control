@@ -13,17 +13,15 @@ const imageController = {
 	picam(req, res) {
 		const myCamera = new PiCamera({
 			mode: 'photo',
-			width: 640,
-			height: 480,
+			width: 340,
+			height: 280,
 			nopreview: true,
 		});
 
 		myCamera
 			.snapDataUrl()
 			.then(result => {
-				console.log(result);
-				// Your picture was captured
-				res.json({ img: result });
+				res.render('home', { immg: result });
 			})
 			.catch(error => {
 				// Handle your error
