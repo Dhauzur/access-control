@@ -35,7 +35,6 @@ const imageController = {
 			} else {
 				//console.log(data);
 				var dataBase64 = Buffer.from(data).toString('base64');
-				console.log(dataBase64);
 				res.render('home', { immg: dataBase64 });
 			}
 		});
