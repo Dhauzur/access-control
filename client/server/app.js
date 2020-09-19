@@ -26,6 +26,8 @@ const limiter = rateLimit({
 	max: 1000, // limit each IP to 1000 requests per windowMs
 });
 
+app.set('view engine', 'hbs');
+
 const deleteErrors = async () => {
 	try {
 		logger.info('Borrando errores anteriores');
