@@ -30,7 +30,7 @@ const limiter = rateLimit({
 var stream = raspividStream();
 
 // To stream over websockets:
-videoStream.on('data', data => {
+stream.on('data', data => {
 	ws.send(data, { binary: true }, error => {
 		if (error) console.error(error);
 	});
@@ -67,7 +67,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: false }));
 app.use(bodyParser.json({ limit: '50mb' }));
 
-app.get('/', (req, res) => res.render('home', { date: new Date() }));
+app.get('/', (req, res) => res.sendFile(__dirname + '/index.html'));
 app.get('/errors', async (req, res) => {
 	const errors = await catcherService.getAll();
 	res.render('home', { errors });

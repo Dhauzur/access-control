@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		rasp
+	</body>
+</html>
+<script
+	type="text/javascript"
+	src="https://rawgit.com/131/h264-live-player/master/vendor/dist/http-live-player.js"
+></script>
+<script src="https://js.pusher.com/4.1/pusher.min.js"></script>
+<script>
+	var canvas = document.createElement('canvas');
+	document.body.appendChild(canvas);
+
+	var wsavc = new WSAvcPlayer(canvas, 'webgl');
+
+	wsavc.connect('192.168.0.8');
+</script>
