@@ -11,6 +11,7 @@ import fileUpload from 'express-fileupload';
 import { logger } from './config/pino';
 import responseTime from 'response-time';
 import catcherService from './services/catcher';
+import raspividStream from 'raspivid-stream';
 
 const app = express();
 const MONGO_OPTIONS = {
@@ -24,6 +25,15 @@ const MONGO_OPTIONS = {
 const limiter = rateLimit({
 	windowMs: 15 * 60 * 1000, // 15 minutes
 	max: 1000, // limit each IP to 1000 requests per windowMs
+});
+
+var stream = raspividStream();
+
+// To stream over websockets:
+videoStream.on('data', data => {
+	ws.send(data, { binary: true }, error => {
+		if (error) console.error(error);
+	});
 });
 
 app.set('view engine', 'hbs');

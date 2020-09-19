@@ -1,8 +1,9 @@
 import imageService from '../services/image';
 import helpers from '../utils/helpers';
-const PiCamera = require('pi-camera');
+// const PiCamera = require('pi-camera');
 
 const imageController = {
+	raspivid(req, res) {},
 	put(req, res) {
 		const { data } = req.body;
 		res.json(imageService.put(data));

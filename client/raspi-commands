@@ -1,0 +1,7 @@
+raspivid --verbose --nopreview -hf -vf --width 640 --height 480 --framerate 15 --bitrate 1000000 --profile baseline --timeout 0 -o - | gst-launch-1.0 -v fdsrc ! h264parse ! rtph264pay config-interval=1 pt=96 ! udpsink host=127.0.0.1 port=8004
+
+raspivid -t 0 -w 1280 -h 720 -o – | nc -u 192.168.0.2 5000
+
+on the RasPi:
+raspivid -t 0 -n -b 1000000 -w 640 -h 480 -fps 30 -o - | cvlc -v stream:///dev/stdin --sout '#rtp{sdp=rtsp://:8554/}' :demux=h264
+and on the client: rtsp://192.168.2.104:8554/
