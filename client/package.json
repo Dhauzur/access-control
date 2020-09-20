@@ -35,6 +35,7 @@
 		"response-time": "^2.3.2",
 		"rutjs": "^0.1.1",
 		"simple-peer": "^9.7.2",
+		"socket.io": "^2.3.0",
 		"underscore": "^1.9.1",
 		"utf8": "^3.0.0"
 	},
