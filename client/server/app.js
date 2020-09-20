@@ -29,11 +29,15 @@ const limiter = rateLimit({
 	max: 1000, // limit each IP to 1000 requests per windowMs
 });
 
-var stream = raspividStream();
-// To stream over websockets:
-stream.on('data', data => {
-	ws.send(data, { binary: true }, error => {
-		if (error) console.error(error);
+ws.sockets.on('connection', function(socket) {
+	// WebSocket Connection
+
+	var stream = raspividStream();
+	// To stream over websockets:
+	stream.on('data', data => {
+		ws.send(data, { binary: true }, error => {
+			if (error) console.error(error);
+		});
 	});
 });
 
