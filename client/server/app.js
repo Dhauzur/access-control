@@ -12,22 +12,8 @@ import { logger } from './config/pino';
 import responseTime from 'response-time';
 import catcherService from './services/catcher';
 import raspividStream from 'raspivid-stream';
-var http = require('http').createServer(handler);
-var ws = require('socket.io')(http);
-
-function handler(req, res) {
-	//create server
-	fs.readFile(__dirname + '/public/index.html', function(err, data) {
-		//read file index.html in public folder
-		if (err) {
-			res.writeHead(404, { 'Content-Type': 'text/html' }); //display 404 on error
-			return res.end('404 Not Found');
-		}
-		res.writeHead(200, { 'Content-Type': 'text/html' }); //write HTML
-		res.write(data); //write data from index.html
-		return res.end();
-	});
-}
+const WebSocket = require('ws');
+const ws = new WebSocket('ws://localhost/ws');
 
 const app = express();
 const MONGO_OPTIONS = {
@@ -43,15 +29,11 @@ const limiter = rateLimit({
 	max: 1000, // limit each IP to 1000 requests per windowMs
 });
 
-ws.sockets.on('connection', function(socket) {
-	// WebSocket Connection
-
-	var stream = raspividStream();
-	// To stream over websockets:
-	stream.on('data', data => {
-		ws.send(data, { binary: true }, error => {
-			if (error) console.error(error);
-		});
+var stream = raspividStream();
+// To stream over websockets:
+stream.on('data', data => {
+	ws.send(data, { binary: true }, error => {
+		if (error) console.error(error);
 	});
 });
 

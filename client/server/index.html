@@ -1,5 +1,11 @@
 <!DOCTYPE html>
 <html>
+	<head>
+		<meta
+			http-equiv="Content-Security-Policy"
+			content="script-src 'self' http://localhost:3000 'unsafe-inline' 'unsafe-eval' ;"
+		/>
+	</head>
 	<body>
 		rasp
 	</body>
@@ -8,12 +14,11 @@
 	type="text/javascript"
 	src="https://rawgit.com/131/h264-live-player/master/vendor/dist/http-live-player.js"
 ></script>
-<script src="https://js.pusher.com/4.1/pusher.min.js"></script>
 <script>
 	var canvas = document.createElement('canvas');
 	document.body.appendChild(canvas);
 
 	var wsavc = new WSAvcPlayer(canvas, 'webgl');
 
-	wsavc.connect('192.168.0.8');
+	wsavc.connect('ws://localhost/ws');
 </script>
